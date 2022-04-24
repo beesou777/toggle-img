@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    img{
+        height: 300px;
+        width: 500px;
+        border-radius: 20px;
+        left: 50%;
+    }
+    button{
+        padding: 15px 20px;
+        color: aliceblue;
+        background: #333;
+        justify-content: center;
+        border-radius: 10px;
+        position: relative;
+        left: 33%;
+        display: none;
+
+    }
+    .btn1{
+        display: none;
+    }
+    .btn2 {
+        display: none;
+
+    }
+    .active{
+        display: block;
+
+    }
+</style>
+<body>
+    <div class="cntainer">
+        <button  class='btn1 active' onclick="toggle()">
+            hide images
+        </button>
+        <button class="btn2" onclick="toggle()">show image</button>
+        
+        <div class="img">
+            <img src="a.jpeg">
+            <img src="b.jpeg">
+           
+            
+            <img src="bb.jpeg">
+            <img src="c.jpeg">
+         
+        </div>
+        
+      
+       
+    </div>
+   
+    <script>
+            const btn1 = document.querySelector(".btn1")
+            const btn2 = document.querySelector(".btn2") 
+
+            btn1.addEventListener('click', () =>{
+                if(btn2.classList.contains('btn2')){
+                    btn2.classList.add('active')
+                    btn1.classList.remove("active")
+                }
+            })
+            btn2.addEventListener('click', () =>{
+                if (btn1.classList.contains('btn1')){
+                    btn1.classList.add('active')
+                    btn2.classList.remove("active")
+                }
+            })
+
+
+            function toggle(btn1){
+
+               let  imge = document.querySelector('.img');
+                if (imge.style.display != 'none'){
+                    imge.style.display = "none";
+                }else{
+                    imge.style.display = "block";
+                
+
+            }}
+
+
+        
+            
+
+
+        
+    </script>
+</body>
+</html>
